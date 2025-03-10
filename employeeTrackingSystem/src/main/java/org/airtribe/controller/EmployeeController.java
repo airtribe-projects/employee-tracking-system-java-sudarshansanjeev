@@ -46,4 +46,15 @@ public class EmployeeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
         }
     }
+
+    @GetMapping("byName")
+    public ResponseEntity<?> getEmployeeByName(@RequestParam("name") String name) {
+        try {
+            Employee employee = employeeService.findEmployeeByName(name);
+            return ResponseEntity.status(HttpStatus.OK).body(employee);
+        }
+        catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Error occurred while fetching employee : " + e.getMessage());
+        }
+    }
 }

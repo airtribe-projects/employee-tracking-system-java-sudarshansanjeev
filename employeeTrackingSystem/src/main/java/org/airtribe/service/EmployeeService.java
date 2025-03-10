@@ -31,4 +31,8 @@ public class EmployeeService {
 
         return true;
     }
+
+    public Employee findEmployeeByName(String name) {
+        return employeeRepository.findByName(name);
+    }
 }
