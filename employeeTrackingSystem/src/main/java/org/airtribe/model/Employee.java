@@ -13,6 +13,8 @@ public class Employee {
     String dept;
     String project;
 
+    String status;
+
     public Long getId() {
         return id;
     }
@@ -45,4 +47,11 @@ public class Employee {
         this.project = project;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
