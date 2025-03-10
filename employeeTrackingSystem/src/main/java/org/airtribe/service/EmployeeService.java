@@ -21,4 +21,14 @@ public class EmployeeService {
         //employeeRepository.findById(employee.getId());
         return employee;
     }
+
+    public boolean deleteEmployeeById(Long id) {
+        if (id == 0) {
+            throw new IllegalArgumentException("Invalid Employee ID");
+        }
+
+        employeeRepository.deleteById(id);
+
+        return true;
+    }
 }
